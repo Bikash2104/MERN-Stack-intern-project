@@ -18,8 +18,7 @@ function DevApiLocal() {
     const [filteredData,setFilteredData]=useState([])
 
     useEffect(() => {
-        const FetchData = async () => {
-           
+        const FetchData = async () =>{      
             try {
                 const ResponseData = await axios.get(`http://devapi.thelocal.co.in/b2b/api-product/product/b2b/search/supplier/AL-S202309-756/all?productName=${search}`)
                 setResponse(ResponseData.data)
@@ -30,18 +29,14 @@ function DevApiLocal() {
             } 
         }
       FetchData();
-       
-
     }, [search])
    
-
     const handleInputChange = async (e, value) => {
         setSearch(value);     
       }
 
     return (
         <div>
-
             <Stack sx={{ width: 300, marginTop:3 ,marginLeft:9,marginBottom:4}}>
                 <Autocomplete
                     id="free-solo-demo"
